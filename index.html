@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Life of a Tree</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <!-- Sound Effect -->
+  <audio id="tree-sound" src="assets/birds.mp3" loop autoplay></audio>
+  <button onclick="toggleSound()" id="sound-btn">Mute Sound</button>
+
+  <!-- Header -->
+  <header>
+    <h1>Life of a Tree: More Than Just Leaves</h1>
+    <img src="assets/tree-bg.jpg" alt="Forest Background" class="hero-img"/>
+  </header>
+
+  <!-- Info Section -->
+  <section class="info">
+    <img src="assets/tree-icon.png" alt="Tree Icon" class="icon" />
+    <h2>Trees Clean Our Air</h2>
+    <p>One tree can absorb up to <span class="counter" data-target="21">0</span> kg of CO₂ per year.</p>
+  </section>
+
+  <section class="info">
+    <h2>Habitats for Wildlife</h2>
+    <p>Forests are home to <span class="counter" data-target="80">0</span>% of the world’s terrestrial animals.</p>
+    <img src="assets/forest.jpg" alt="Wildlife in Trees" />
+  </section>
+
+  <!-- Video -->
+  <section class="video-section">
+    <h2>Watch How Trees Help You</h2>
+    <video controls width="320">
+      <source src="assets/air-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- AR Trees -->
+  <section class="ar-tree">
+    <h2>Explore Different Trees in AR</h2>
+
+    <div class="tree-card">
+      <h3>1. Oak Tree</h3>
+      <model-viewer src="assets/tree-oak.glb" ar ar-modes="scene-viewer webxr quick-look"
+                    auto-rotate camera-controls style="width: 100%; height: 300px;">
+      </model-viewer>
+    </div>
+
+    <div class="tree-card">
+      <h3>2. Pine Tree</h3>
+      <model-viewer src="assets/tree-pine.glb" ar ar-modes="scene-viewer webxr quick-look"
+                    auto-rotate camera-controls style="width: 100%; height: 300px;">
+      </model-viewer>
+    </div>
+
+    <div class="tree-card">
+      <h3>3. Sakura Tree</h3>
+      <model-viewer src="assets/tree-sakura.glb" ar ar-modes="scene-viewer webxr quick-look"
+                    auto-rotate camera-controls style="width: 100%; height: 300px;">
+      </model-viewer>
+    </div>
+
+    <p>Tap the AR cube on each model to place them in your space!</p>
+  </section>
+
+  <!-- QR Code -->
+  <section class="qr">
+    <h2>Scan to Plant a Tree</h2>
+    <img src="assets/qr-code.png" alt="QR Code" class="qr-code" />
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Support SDG 15 - Life on Land | Designed by [Your Name]</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
