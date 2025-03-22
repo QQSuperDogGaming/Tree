@@ -9,11 +9,6 @@ body {
 header {
   text-align: center;
   padding: 2rem;
-  /* Removed background image */
-}
-
-.hero-img {
-  display: none; /* Hide this as it is not needed anymore */
 }
 
 section {
