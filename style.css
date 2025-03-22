@@ -9,14 +9,11 @@ body {
 header {
   text-align: center;
   padding: 2rem;
-  background-color: #d3f2d3;
+  /* Removed background image */
 }
 
 .hero-img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
+  display: none; /* Hide this as it is not needed anymore */
 }
 
 section {
@@ -74,10 +71,6 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-img {
-    max-height: 250px;
-  }
-
   h1 {
     font-size: 1.8rem;
   }
