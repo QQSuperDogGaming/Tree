@@ -10,18 +10,17 @@
 <body>
 
   <!-- Sound Effect -->
-  <audio id="tree-sound" src="assets/birds.mp3" loop autoplay></audio>
+  <audio id="tree-sound" src="birds.mp3" loop autoplay></audio>
   <button onclick="toggleSound()" id="sound-btn">Mute Sound</button>
 
   <!-- Header -->
   <header>
     <h1>Life of a Tree: More Than Just Leaves</h1>
-    <!-- Removed the background image -->
   </header>
 
   <!-- Info Section -->
   <section class="info">
-    <img src="assets/tree-icon.png" alt="Tree Icon" class="icon" />
+    <img src="tree-icon.png" alt="Tree Icon" class="icon" />
     <h2>Trees Clean Our Air</h2>
     <p>One tree can absorb up to <span class="counter" data-target="21">0</span> kg of CO₂ per year.</p>
   </section>
@@ -29,7 +28,7 @@
   <section class="info">
     <h2>Habitats for Wildlife</h2>
     <p>Forests are home to <span class="counter" data-target="80">0</span>% of the world’s terrestrial animals.</p>
-    <img src="assets/forest.jpg" alt="Wildlife in Trees" />
+    <img src="forest.jpg" alt="Wildlife in Trees" />
   </section>
 
   <!-- AR Tree -->
@@ -38,18 +37,12 @@
 
     <div class="tree-card">
       <h3>1. Oak Tree</h3>
-      <model-viewer src="assets/tree-oak.glb" ar ar-modes="scene-viewer webxr quick-look"
+      <model-viewer src="tree-oak.glb" ar ar-modes="scene-viewer webxr quick-look"
                     auto-rotate camera-controls style="width: 100%; height: 300px;">
       </model-viewer>
     </div>
 
     <p>Tap the AR cube on the model to place it in your space!</p>
-  </section>
-
-  <!-- QR Code -->
-  <section class="qr">
-    <h2>Scan to Plant a Tree</h2>
-    <img src="assets/qr-code.png" alt="QR Code" class="qr-code" />
   </section>
 
   <!-- Footer -->
