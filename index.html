@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Background video (optional, can be hidden on AR-capable devices) -->
+  <!-- Background video (optional, hidden during AR interaction) -->
   <video autoplay muted loop id="bg-video">
     <source src="assets/air.mp4" type="video/mp4" />
   </video>
@@ -23,51 +23,38 @@
     <h1>Life of a Tree: More Than Just Leaves</h1>
   </header>
 
-  <!-- Info Section -->
-  <section class="info">
-    <img src="assets/tree-icon.png" alt="Tree Icon" class="icon" />
-    <h2>Trees Clean Our Air</h2>
-    <p>One tree can absorb up to <span class="counter" data-target="21">0</span> kg of CO₂ per year.</p>
-  </section>
-
-  <section class="info">
-    <h2>Habitats for Wildlife</h2>
-    <p>Forests are home to <span class="counter" data-target="80">0</span>% of the world’s terrestrial animals.</p>
-    <img src="assets/forest.jpg" alt="Wildlife in Trees" />
-  </section>
-
   <!-- AR Tree Section -->
   <section class="ar-tree">
-    <h2>Explore Trees in AR</h2>
+    <h2>Explore Multiple Trees in AR</h2>
 
+    <!-- Oak Tree -->
     <div class="tree-card">
       <h3>1. Oak Tree</h3>
       <model-viewer src="assets/tree-oak.glb" ar ar-modes="scene-viewer webxr quick-look"
                     auto-rotate camera-controls style="width: 100%; height: 300px;">
       </model-viewer>
+      <button onclick="addTree('assets/tree-oak.glb')">Add Oak Tree</button>
     </div>
 
+    <!-- Pine Tree -->
     <div class="tree-card">
       <h3>2. Pine Tree</h3>
       <model-viewer src="assets/tree-pine.glb" ar ar-modes="scene-viewer webxr quick-look"
                     auto-rotate camera-controls style="width: 100%; height: 300px;">
       </model-viewer>
+      <button onclick="addTree('assets/tree-pine.glb')">Add Pine Tree</button>
     </div>
 
+    <!-- Sakura Tree -->
     <div class="tree-card">
       <h3>3. Sakura Tree</h3>
       <model-viewer src="assets/tree-sakura.glb" ar ar-modes="scene-viewer webxr quick-look"
                     auto-rotate camera-controls style="width: 100%; height: 300px;">
       </model-viewer>
+      <button onclick="addTree('assets/tree-sakura.glb')">Add Sakura Tree</button>
     </div>
 
-    <p>Tap the AR cube icon to place a tree into your space.</p>
-  </section>
-
-  <!-- QR Code -->
-  <section class="qr">
-    <h2>Scan to Open on Your Phone</h2>
-    <img src="assets/qr-code.png" class="qr-code" alt="QR code to view site" />
+    <p>Tap the AR cube icon to place multiple trees in your space!</p>
   </section>
 
   <!-- Footer -->
