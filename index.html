@@ -9,12 +9,12 @@
 </head>
 <body>
 
-  <!-- Background video (optional, hidden during AR interaction) -->
+  <!-- Background Video -->
   <video autoplay muted loop id="bg-video">
     <source src="assets/air.mp4" type="video/mp4" />
   </video>
 
-  <!-- Sound Effect -->
+  <!-- Background Sound -->
   <audio id="tree-sound" src="assets/birds.mp3" loop autoplay></audio>
   <button onclick="toggleSound()" id="sound-btn">Mute Sound</button>
 
@@ -23,38 +23,67 @@
     <h1>Life of a Tree: More Than Just Leaves</h1>
   </header>
 
-  <!-- AR Tree Section -->
-  <section class="ar-tree">
-    <h2>Explore Multiple Trees in AR</h2>
+  <!-- Hong Kong Special Section -->
+  <section class="hk-special">
+    <h2>Hong Kong Special Trees</h2>
 
-    <!-- Oak Tree -->
+    <!-- Scrollable Tree Icons -->
+    <div class="hk-scroll">
+      <div class="hk-tree" onclick="selectHKTree('tree-banyan.glb', 'banyan-voice.mp3', 'The Banyan tree represents strength and longevity.')">
+        <img src="assets/banyan-icon.png" alt="Banyan Tree" />
+      </div>
+      <div class="hk-tree" onclick="selectHKTree('tree-flame.glb', 'flame-voice.mp3', 'The Flame tree is known for its fiery red blossoms.')">
+        <img src="assets/flame-icon.png" alt="Flame Tree" />
+      </div>
+      <div class="hk-tree" onclick="selectHKTree('tree-orchid.glb', 'orchid-voice.mp3', 'The Hong Kong Orchid Tree is the city’s floral emblem.')">
+        <img src="assets/orchid-icon.png" alt="Orchid Tree" />
+      </div>
+      <div class="hk-tree" onclick="selectHKTree('tree-camphor.glb', 'camphor-voice.mp3', 'Camphor trees are valued for their aromatic wood and leaves.')">
+        <img src="assets/camphor-icon.png" alt="Camphor Tree" />
+      </div>
+    </div>
+
+    <!-- AR Viewer -->
+    <model-viewer id="hk-model" ar ar-modes="scene-viewer webxr quick-look"
+                  auto-rotate camera-controls
+                  style="width: 100%; height: 300px;">
+    </model-viewer>
+
+    <!-- Voice & Info -->
+    <audio id="hk-voice" src=""></audio>
+    <div id="hk-info" class="hk-info-card">Click a tree icon to learn more.</div>
+  </section>
+
+  <!-- Original Tree Section (Scrolls Vertically) -->
+  <section class="ar-tree">
+    <h2>Explore More Trees in AR</h2>
+
     <div class="tree-card">
       <h3>1. Oak Tree</h3>
       <model-viewer src="assets/tree-oak.glb" ar ar-modes="scene-viewer webxr quick-look"
                     auto-rotate camera-controls style="width: 100%; height: 300px;">
       </model-viewer>
-      <button onclick="addTree('assets/tree-oak.glb')">Add Oak Tree</button>
     </div>
 
-    <!-- Pine Tree -->
     <div class="tree-card">
       <h3>2. Pine Tree</h3>
       <model-viewer src="assets/tree-pine.glb" ar ar-modes="scene-viewer webxr quick-look"
                     auto-rotate camera-controls style="width: 100%; height: 300px;">
       </model-viewer>
-      <button onclick="addTree('assets/tree-pine.glb')">Add Pine Tree</button>
     </div>
 
-    <!-- Sakura Tree -->
     <div class="tree-card">
       <h3>3. Sakura Tree</h3>
       <model-viewer src="assets/tree-sakura.glb" ar ar-modes="scene-viewer webxr quick-look"
                     auto-rotate camera-controls style="width: 100%; height: 300px;">
       </model-viewer>
-      <button onclick="addTree('assets/tree-sakura.glb')">Add Sakura Tree</button>
     </div>
+  </section>
 
-    <p>Tap the AR cube icon to place multiple trees in your space!</p>
+  <!-- QR Code -->
+  <section class="qr">
+    <h2>Scan to View on Your Phone</h2>
+    <img src="assets/qr-code.png" alt="QR Code" class="qr-code" />
   </section>
 
   <!-- Footer -->
