@@ -1,27 +1,45 @@
-// Toggle background sound
-let isMuted = false;
-const soundBtn = document.getElementById('sound-btn');
-const treeSound = document.getElementById('tree-sound');
-
 function toggleSound() {
-  if (isMuted) {
-    treeSound.play();
-    soundBtn.textContent = 'Mute Sound';
+  const sound = document.getElementById('tree-sound');
+  const btn = document.getElementById('mute-btn');
+  if (sound.paused) {
+    sound.play();
+    btn.src = "assets/mute-btn.png"; // your unmute icon
   } else {
-    treeSound.pause();
-    soundBtn.textContent = 'Unmute Sound';
+    sound.pause();
+    btn.src = "assets/mute-btn.png"; // your mute icon
   }
-  isMuted = !isMuted;
 }
 
-// Change AR model, voice, and info for Hong Kong Special Trees
-function selectHKTree(modelFile, voiceFile, description) {
+function selectHKTree(modelFile, voiceFile, popupImage) {
   const viewer = document.getElementById('hk-model');
   const audio = document.getElementById('hk-voice');
-  const info = document.getElementById('hk-info');
+  const popup = document.getElementById('hk-popup');
+  const popupImg = document.getElementById('hk-popup-img');
 
   viewer.setAttribute('src', `assets/${modelFile}`);
   audio.setAttribute('src', `assets/${voiceFile}`);
+  popupImg.setAttribute('src', `assets/${popupImage}`);
+  popup.classList.add('show');
   audio.play();
-  info.textContent = description;
+}
+
+function closePopup() {
+  const popup = document.getElementById('hk-popup');
+  popup.classList.remove('show');
+}
+
+function selectTree(voiceFile, popupImage) {
+  const voice = document.getElementById('tree-voice');
+  const popup = document.getElementById('tree-popup');
+  const popupImg = document.getElementById('tree-popup-img');
+
+  voice.setAttribute('src', `assets/${voiceFile}`);
+  popupImg.setAttribute('src', `assets/${popupImage}`);
+  popup.classList.add('show');
+  voice.play();
+}
+
+function closeTreePopup() {
+  const popup = document.getElementById('tree-popup');
+  popup.classList.remove('show');
 }
