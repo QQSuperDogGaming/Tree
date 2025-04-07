@@ -9,86 +9,95 @@
 </head>
 <body>
 
-  <!-- Background Video -->
+  <!-- Background video -->
   <video autoplay muted loop id="bg-video">
     <source src="assets/air.mp4" type="video/mp4" />
   </video>
 
-  <!-- Background Sound -->
+  <!-- Background sound + mute button -->
   <audio id="tree-sound" src="assets/birds.mp3" loop autoplay></audio>
-  <button onclick="toggleSound()" id="sound-btn">Mute Sound</button>
+  <img id="mute-btn" src="assets/mute-btn.png" alt="Mute" onclick="toggleSound()" />
 
-  <!-- Header -->
+  <!-- Title -->
   <header>
-    <h1>Life of a Tree: More Than Just Leaves</h1>
+    <img src="assets/title-img.png" alt="Life of a Tree" class="title-img" />
   </header>
 
-  <!-- Hong Kong Special Section -->
+  <!-- HONG KONG SPECIAL -->
   <section class="hk-special">
     <h2>Hong Kong Special Trees</h2>
 
-    <!-- Scrollable Tree Icons -->
     <div class="hk-scroll">
-      <div class="hk-tree" onclick="selectHKTree('tree-banyan.glb', 'banyan-voice.mp3', 'The Banyan tree represents strength and longevity.')">
+      <div class="hk-tree" onclick="selectHKTree('tree-banyan.glb', 'banyan-voice.mp3', 'popup-banyan.png')">
         <img src="assets/banyan-icon.png" alt="Banyan Tree" />
       </div>
-      <div class="hk-tree" onclick="selectHKTree('tree-flame.glb', 'flame-voice.mp3', 'The Flame tree is known for its fiery red blossoms.')">
+      <div class="hk-tree" onclick="selectHKTree('tree-flame.glb', 'flame-voice.mp3', 'popup-flame.png')">
         <img src="assets/flame-icon.png" alt="Flame Tree" />
       </div>
-      <div class="hk-tree" onclick="selectHKTree('tree-orchid.glb', 'orchid-voice.mp3', 'The Hong Kong Orchid Tree is the city’s floral emblem.')">
+      <div class="hk-tree" onclick="selectHKTree('tree-orchid.glb', 'orchid-voice.mp3', 'popup-orchid.png')">
         <img src="assets/orchid-icon.png" alt="Orchid Tree" />
       </div>
-      <div class="hk-tree" onclick="selectHKTree('tree-camphor.glb', 'camphor-voice.mp3', 'Camphor trees are valued for their aromatic wood and leaves.')">
+      <div class="hk-tree" onclick="selectHKTree('tree-camphor.glb', 'camphor-voice.mp3', 'popup-camphor.png')">
         <img src="assets/camphor-icon.png" alt="Camphor Tree" />
       </div>
     </div>
 
-    <!-- AR Viewer -->
     <model-viewer id="hk-model" ar ar-modes="scene-viewer webxr quick-look"
-                  auto-rotate camera-controls
-                  style="width: 100%; height: 300px;">
-    </model-viewer>
+                  auto-rotate camera-controls style="width: 100%; height: 300px;"></model-viewer>
 
-    <!-- Voice & Info -->
     <audio id="hk-voice" src=""></audio>
-    <div id="hk-info" class="hk-info-card">Click a tree icon to learn more.</div>
+
+    <div id="hk-popup" class="popup-card">
+      <img id="hk-popup-img" src="" alt="Tree Popup" />
+      <img id="hk-close" src="assets/popup-close.png" alt="Close" onclick="closePopup()" />
+    </div>
   </section>
 
-  <!-- Original Tree Section (Scrolls Vertically) -->
+  <!-- ORIGINAL TREES SECTION -->
   <section class="ar-tree">
-    <h2>Explore More Trees in AR</h2>
+    <img src="assets/ar-title.png" alt="Explore Multiple Trees in AR" class="section-heading" />
 
-    <div class="tree-card">
-      <h3>1. Oak Tree</h3>
+    <div class="framed-model">
       <model-viewer src="assets/tree-oak.glb" ar ar-modes="scene-viewer webxr quick-look"
-                    auto-rotate camera-controls style="width: 100%; height: 300px;">
-      </model-viewer>
+                    auto-rotate camera-controls class="framed-viewer"></model-viewer>
+      <img src="assets/border-oak.png" class="model-border" alt="Oak Frame" />
     </div>
 
-    <div class="tree-card">
-      <h3>2. Pine Tree</h3>
+    <div class="framed-model">
       <model-viewer src="assets/tree-pine.glb" ar ar-modes="scene-viewer webxr quick-look"
-                    auto-rotate camera-controls style="width: 100%; height: 300px;">
-      </model-viewer>
+                    auto-rotate camera-controls class="framed-viewer"></model-viewer>
+      <img src="assets/border-pine.png" class="model-border" alt="Pine Frame" />
     </div>
 
-    <div class="tree-card">
-      <h3>3. Sakura Tree</h3>
+    <div class="framed-model">
       <model-viewer src="assets/tree-sakura.glb" ar ar-modes="scene-viewer webxr quick-look"
-                    auto-rotate camera-controls style="width: 100%; height: 300px;">
-      </model-viewer>
+                    auto-rotate camera-controls class="framed-viewer"></model-viewer>
+      <img src="assets/border-sakura.png" class="model-border" alt="Sakura Frame" />
+    </div>
+
+    <img src="assets/ar-tip.png" alt="Tap the AR cube to place trees" class="ar-tip" />
+
+    <div id="tree-popup" class="popup-card">
+      <img id="tree-popup-img" src="" alt="Tree Popup" />
+      <img id="tree-popup-close" src="assets/popup-close.png" alt="Close" onclick="closeTreePopup()" />
+      <audio id="tree-voice" src=""></audio>
     </div>
   </section>
 
-  <!-- QR Code -->
+  <!-- QR CODE -->
   <section class="qr">
-    <h2>Scan to View on Your Phone</h2>
     <img src="assets/qr-code.png" alt="QR Code" class="qr-code" />
   </section>
 
-  <!-- Footer -->
+  <!-- SOCIAL MEDIA -->
+  <section class="socials">
+    <img src="assets/instagram-promo.png" alt="Instagram" class="social-icon" />
+    <img src="assets/youtube-promo.png" alt="YouTube" class="social-icon" />
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>Support SDG 15 - Life on Land | Designed by [Your Name]</p>
+    <img src="assets/footer-img.png" alt="Support SDG 15" class="footer-img" />
   </footer>
 
   <script src="script.js"></script>
